@@ -25,6 +25,12 @@ raw_df <-
   map_df(~read_csv(.))
 ```
 
+```{r unique tournaments}
+raw_df |> 
+  filter(tourney_level != 'D') |> 
+  distinct(tourney_name)
+```
+
 ```{r filter results}
 raw_df |> 
   group_by(tourney_id) |> 
